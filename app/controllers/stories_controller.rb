@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
 	end
 
 	def create
-		story = current_user.stories.create(params[:story])
+		@story = current_user.stories.new(params[:story])
 		flash[:success] = "Story successfully Added"
 		redirect_to "/stories/#{story.id}"
 	end
@@ -33,5 +33,9 @@ class StoriesController < ApplicationController
 		@story.destroy
 		flash[:success] ="Story Deleted."
 		redirect_to '/stories'
+	end
+
+	def story_params
+		params.require(:story).permit(:title, :story, :address)
 	end
 end
