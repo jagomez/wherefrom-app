@@ -1,0 +1,24 @@
+<h1>New Story</h1>
+<%= form for @story do |f| %>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+		<%= f.label :story %>
+		<%= f.text_field :story %>
+
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+
+		<%= f.label :longitude %>
+		<%= f.text_field :longitude %>
+
+		<%= f.label :latitude %>
+		<%= f.text_field :latitude %>
+	</div>
+
+	<div>
+		<%= f.submit %>
+	</div>
+
+	<% end %>
