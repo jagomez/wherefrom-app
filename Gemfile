@@ -17,8 +17,8 @@ gem 'bootstrap-sass'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
+gem 'geocoder'
 gem 'gmaps4rails'
-
 gem 'quiet_assets'
 gem 'simple_form'
 gem 'devise'
