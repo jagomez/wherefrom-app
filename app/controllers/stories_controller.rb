@@ -12,9 +12,9 @@ class StoriesController < ApplicationController
 	end
 
 	def create
-		@story = current_user.stories.new(params[:story])
+		@story = current_user.stories.new(params[:story_parms])
 		flash[:success] = "Story successfully Added"
-		redirect_to "/stories/#{story.id}"
+		redirect_to "/stories/#{@story.id}"
 	end
 
 	def edit
