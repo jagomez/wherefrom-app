@@ -4,22 +4,29 @@
 	<h1>HI there!</h1>
   <h4><a href="/stories/new">Add a new Story</a></h4>
 <div class="row">
-  <% @stories.each do |story| %>
     <div class="col-md-3">
-      <table>
+      <table class="table">
         <tr>
           <td>Title</td>
           <td>Story</td>
           <td>Address</td>
+          <td>Longitude</td>
+          <td>Latitude</td>
         </tr>
+        
         <tr>
+          <% @stories.each do |story| %>
       <td><%= story.title %></td>
       <td><%= story.story %></td>
       <td><%= story.address %></td>
+      <td><%= story.longitude %></td>
+      <td><%= story.latitude %></td>
+        
     </tr>
+    <% end %>
     </table>
     </div>
-    <% end %>
+    
 </div>
 
 
