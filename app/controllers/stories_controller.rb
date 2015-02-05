@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
 	end
 
 	def create
-		@story = current_user.stories.new(params[:story_parms])
+		@story = current_user.stories.create(params[:story_parms])
 		flash[:success] = "Story successfully Added"
 		redirect_to "/stories/#{@story.id}"
 	end
@@ -23,7 +23,7 @@ class StoriesController < ApplicationController
 
 	def update
 		@story = Story.find_by(:id => params[:id])
-		@story.update(params[:story])
+		@story.update_attributes(story_params)
 		flash[:success] = "Story Updated"
 		redirect_to "/stories/#{params[:id]}"
 	end
@@ -36,6 +36,6 @@ class StoriesController < ApplicationController
 	end
 
 	def story_params
-		params.require(:story).permit(:title, :story, :address)
+		params.require(:story).permit(:title, :address)
 	end
 end

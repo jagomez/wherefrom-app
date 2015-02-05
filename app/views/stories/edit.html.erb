@@ -1,1 +1,18 @@
-This is where I edit info
+<h1>Edit this Story</h1>
+<%= form_for @story do |f| %>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+
+		<%= f.label :story%>
+		<%= f.text_field :story %>
+
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+	</div>
+
+	<div>
+			<%= f.submit %>
+	</div>
+
+	<% end %>
